@@ -22,6 +22,8 @@ protos.forEach(function(proto) {
   namespaces[proto.Namespace].push(proto.ProtoDir + '/' + proto.ProtoFileName);
 });
 
+if (namespaces['SteamKit2.GC.Dota.Internal'].indexOf('dota2/dota_gcmessages_common_league.proto') === -1) namespaces['SteamKit2.GC.Dota.Internal'].push('dota2/dota_gcmessages_common_league.proto');
+
 for (var namespace in namespaces) {
   var obj = Steam;
   var prop = namespace.split('.').slice(1).reduce(function(last, next) {
